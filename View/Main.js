@@ -46,12 +46,9 @@ function save() {
     let phone = document.getElementById("phone").value;
     let address = document.getElementById("address").value;
     let gender = ``;
-    // console.log(gender);
-    // let genderList = document.getElementsByName('gender');
-    //     (genderList[0].checked) ? genderList[0].value : genderList[1].value;
-    // console.log(genderList)
-    // list.addStudent(addStudent)
-    //  showAll()
+    let newStudent = new Student(MaSv, name, email, phone, address, gender);
+    list.addStudent(newStudent)
+    showAll()
 
     if (document.getElementById('male').checked) {
         gender = document.getElementById('male').value;
@@ -62,10 +59,13 @@ function save() {
     } else {
         document.getElementById('gender-error').innerHTML = 'Vui lòng chọn giới tính';
     }
+
     if (MaSv === "") {
-        document.getElementById('MaSv-error').innerHTML = 'Vui lòng nhập Mã SV';
+        document.getElementById('Masv-error').innerHTML = 'Vui lòng nhập Mã SV '
     } else {
         document.getElementById('MaSv-error').innerHTML = '';
+    }
+    {
         if (name === "") {
             document.getElementById('name-error').innerHTML = 'Vui lòng nhập Họ tên';
         } else {
@@ -87,50 +87,16 @@ function save() {
             document.getElementById('address-error').innerHTML = '';
         }
 
+
         if (MaSv !== '' && name !== '' && email !== '' && phone !== '' && address !== '' && gender !== '') {
             let sv3 = new DanhsachSV(MaSv, name, email, phone, address, gender);
             list.addStudent(sv3);
-
-            // }
-            // if (name && email && phone && address && gender) {
-            //     let students = [];
-            //     students.push({
-            //             name: name,
-            //             email: email,
-            //             phone:phone,
-            //             address: address,
-            //             gender: gender,
-            //         });
-            //     let tableContent = `<tr>
-            //         <th>id</th>
-            //         <th>Họ và tên</th>
-            //         <th>Email</th>
-            //         <th>Số điện thoại</th>
-            //         <th>Địa chỉ</th>
-            //         <th>Giới tính</th>
-            //         <th colspan="2">Action</th>
-            //     </tr>
-            //
-            //     `;
-            //     students.forEach((student, index) => {
-            //         index++;
-            //         tableContent += `<tr>
-            //         <th>${index}</th>
-            //         <th>${student.name}</th>
-            //         <th>${ tudent.email}</th>
-            //         <th>${student.phone}</th>
-            //         <th>${student.address}</th>
-            //         <th>${student.gender}</th>
-            //         <th colspan="2">Action</th>
-            //     </tr>
-            //         `;
-            //
-            //     })
-            //     document.getElementById('list-students').innerHTML = tableContent;
+            showAll()
         }
-        showAll()
+
+        }
     }
-}
+
 
 
 //Lưu dũ diệu vòa danh sách sinh viên
