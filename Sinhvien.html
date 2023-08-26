@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="form-student">
+    <h3>Thông tin sinh viên</h3>
+    <label>Mã SV: </label>
+    <input type="text" id="MaSv">
+    <span id="Masv-error" class="error"></span>
+    <br>
+    <br>
+<label>Họ và tên: </label>
+<input type="text" id="fullname">
+        <span id="name-error" class="error"></span>
+<br>
+    <br>
+<label>Email: </label>
+<input type="email" id="email">
+    <span id="email-error" class="error"></span>
+<br>
+    <br>
+<label>Số điện thoại: </label>
+<input type="number" id="phone">
+    <span id="phone-error" class="error" ></span>
+<br>
+    <br>
+<label>Địa chỉ: </label>
+<input type="text" id="address">
+    <span id="address-error" class="error" ></span>
+<br>
+    <br>
+    <div id="genderStudent" >
+        <label>Giới tính: </label>
+        <input type="radio" name="gender" id="male"  value="Nam">Nam
+        <input type="radio" name="gender" id="female" value="Nữ">Nữ
+        <span id="gender-error" class="error"></span>
+    </div>
+
+    <br>
+        <br>
+    <button onclick="save()">Lưu lại</button>
+</div>
+
+<div class="form-list-student">
+    <h3>Danh sách sinh viên</h3>
+    <table border="1" width="600" cellpadding="0" cellspacing="0">
+        <tr>
+                <th>Mã SV</th>
+                 <th>Họ và tên</th>
+                  <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Giới tính</th>
+                   <th colspan="2">Action</th>
+                </tr>
+        <tbody id="list-students" >
+
+        </tbody>
+    </table>
+
+</div>
+
+<script src="Entiny/DanhsachSV.js"></script>
+<script src="Management/Student.js"></script>
+<script src="View/Main.js"></script>
+
+</body>
+</html>
