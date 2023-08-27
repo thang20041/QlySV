@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>Quản Lý Sinh Viên</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <div class="form-student">
+
     <h3>Thông tin sinh viên</h3>
     <label>Mã SV: </label>
-    <input type="text" id="MaSv">
+    <input type="text" id="MaSv" >
+    <input type="hidden" id="index" >
     <span id="Masv-error" class="error"></span>
     <br>
     <br>
@@ -43,12 +47,14 @@
 
     <br>
         <br>
-    <button onclick="save()">Lưu lại</button>
+    <button class="btn btn-primary" onclick="save()">Lưu lại</button>
 </div>
 
-<div class="form-list-student">
+<div class="form-list-student" >
+
     <h3>Danh sách sinh viên</h3>
-    <table border="1" width="600" cellpadding="0" cellspacing="0">
+    <table class="table table-bordered">
+
         <tr>
                 <th>Mã SV</th>
                  <th>Họ và tên</th>
@@ -60,13 +66,14 @@
                 </tr>
         <tbody id="list-students" >
 
+
         </tbody>
     </table>
 
 </div>
 
-<script src="Entiny/DanhsachSV.js"></script>
-<script src="Management/Student.js"></script>
+<script src="Entiny/Student.js"></script>
+<script src="Management/DanhsachSV.js"></script>
 <script src="View/Main.js"></script>
 
 </body>

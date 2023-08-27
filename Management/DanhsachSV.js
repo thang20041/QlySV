@@ -1,4 +1,4 @@
-class Student{
+class DanhsachSV {
     listStudent;
     constructor() {
         this.listStudent = [];
@@ -9,5 +9,13 @@ class Student{
     findAll(){
         return this.listStudent;
     }
+    remove(index){
+        this.listStudent.splice(index,1);
+
+    }
+    edit(index, newStudent){
+        this.listStudent[index] = newStudent;
+    }
+
 
 }

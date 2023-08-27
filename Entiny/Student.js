@@ -1,4 +1,4 @@
-class DanhsachSV {
+class Student {
     MaSv
     name;
     email;
